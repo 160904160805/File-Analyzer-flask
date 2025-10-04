@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Intelligent File & Data Analyzer</title>
+    <link rel = "stylesheet" href="static\style.css"
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Intelligent File & Data Analyzer</h1>
+
+        <!-- File Upload Form -->
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <button type="submit">Upload & Analyze</button>
+        </form>
+
+        <!-- Flash Messages -->
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="flash">
+              {% for message in messages %}
+                {{ message }}
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+
+        <!-- Display Plot -->
+        {% if reports %}
+            <div class="plot">
+                <h3>📉 Missing Values Heatmap</h3>
+                <img src="{{ url_for('static', filename='plot.png') }}" alt="Missing Value Heatmap">
+            </div>
+
+            <!-- Display Report Download Links -->
+            <div class="reports">
+                <h3>📑 Download Reports</h3>
+                <div class="report-links">
+                    <a href="/download/{{ reports[0] }}"><button>TXT Report</button></a>
+                    <a href="/download/{{ reports[1] }}"><button>Excel Report</button></a>
+                    <a href="/download/{{ reports[2] }}"><button>PDF Report</button></a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
