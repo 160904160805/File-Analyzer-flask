@@ -43,7 +43,7 @@ Upload any file — whether it's a spreadsheet, a report, or a text log — and 
 
 | Dashboard | Heatmap |
 |:-----------:|:-----------:|
-| ![UI](static/images/screenshot1.png) | ![Heatmap](static/plot.png) |
+| ![UI](static/ui.png) | ![Heatmap](static/plot.png) |
 
 
 ---
