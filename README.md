@@ -1,4 +1,4 @@
-# ⚡ Cyber-Themed File Data Analyzer
+# ⚡ File Data Analyzer
 
 > 🚀 A smart Flask-based web app that analyzes uploaded files (Excel, PDF, and Text) — generating instant summaries, insights, and missing value heatmaps in a clean cyber-style dashboard.
 
